@@ -3,7 +3,8 @@
 Steer a lantern boat down a festival-night river and carry its flame to the sea.
 A new river every day, the same for everyone.
 
-The game is a grey-box build: the rules, controls, cards and daily run are done, and the art comes next.
+The rules, controls, cards, daily run and night lighting are done: glowing lanterns and windows mirrored on the water, haze, stars and fireworks.
+The models are still simple shapes; the art pass (concept art, then the boat and canal kit in Blender) comes next.
 It is built for [x-gaming#6](https://github.com/imDev2023/x-gaming/issues/6).
 
 ## How to play
@@ -36,10 +37,10 @@ To check a run as a server would, save `window.__game.record()` from the page as
 
 - **Rules:** [src/sim](src/sim), the whole game in integers so a server can replay a run exactly; see [SPEC.md](SPEC.md) and [docs/architecture.md](docs/architecture.md).
 - **Stages:** [src/stages](src/stages), one data file per stage; Canal Town is the first.
-- **Page:** [src/game](src/game), Three.js r186 through Vite and TypeScript.
+- **Page:** [src/game](src/game), Three.js r186 through Vite and TypeScript: a mirror for the water with rippled light streaks ([water.ts](src/game/water.ts)), bloom, a starry sky, fireworks and embers ([fx.ts](src/game/fx.ts)), and each chunk's static parts merged into a few draw calls ([bake.ts](src/game/bake.ts)).
 - **Concept:** the [concept video](video/concept.mp4) and its [frames](study/sheet.jpg), generated on fal; every generated asset's source and terms are in [CREDITS.md](CREDITS.md).
 
-The production build loads about 150 KB (gzipped) before the first input.
+The production build loads about 165 KB (gzipped) before the first input.
 
 ## Licence
 
