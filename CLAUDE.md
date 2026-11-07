@@ -29,6 +29,8 @@ Read [SPEC.md](SPEC.md) for the design and [docs/architecture.md](docs/architect
 - fal's price list is free to read: `GET https://api.fal.ai/v1/models/pricing?endpoint_id=<id>` with `FAL_KEY` (the billing key lacks that permission).
   On 2026-11-07: Tripo v2.5 image-to-3D and multiview-to-3D 0.01 USD per credit, Hunyuan3D v2.1 0.30 per model, GPT Image 1.5 edit priced per unit.
 - Follow x-gaming's WORKFLOW.md for the asset pipeline: concept art, image-to-3D, the Blender asset loop and its done checks, then the ship check.
+- Cut every generated or scanned model to its phone budget with `tools/lowpoly_bake.py` (headless Blender; usage in its docstring), then `gltf-transform optimize`.
+  It bakes colour as emission, since a diffuse bake turns metal black (checked 2026-11-07, x-gaming's `sources/2026-11-07-kensei-opus-blender-unity.md`).
 - Playtest with `tools/autoplay.js` (it drags like a finger) through `agent-browser`, and check a run with `node tools/replay.ts`.
 
 ## Issues
