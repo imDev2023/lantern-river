@@ -1,0 +1,37 @@
+[
+ {
+  "name": "concept-video",
+  "endpoint": "minimax/h3-max/text-to-video",
+  "started": "2026-11-07T06:06:56.527Z",
+  "seconds": 21,
+  "request_id": "01a1b49e-041c-7e70-b8f3-243bacecb223",
+  "billing": {
+   "x-fal-billable-units": "32.0",
+   "x-fal-request-id": "01a1b49e-041c-7e70-b8f3-243bacecb223",
+   "x-fal-served-from": "f126f34f-2f7b-4a0c-bc59-afd4dcd2c11d"
+  },
+  "arguments": {
+   "prompt": "Stylised 3D mobile game with a hand-painted gouache look and soft brush textures, festival night on a narrow river through an old canal town: a small folded paper-lantern boat carrying one glowing candle flame drifts down dark glassy water, weaving between mossy rocks and gliding between two glowing lantern posts; as it passes close to a little riverside shrine hung with paper lanterns its flame flares brighter and warm light spills across the water. Stone bridges, timber houses with lit windows and fireworks blooming in a deep indigo sky, all reflected in the river. Steady chase camera behind and above the boat, looking downstream. No text, no people.",
+   "duration": 10,
+   "resolution": "1080P",
+   "aspect_ratio": "9:16",
+   "prompt_expansion_mode": "disabled",
+   "seed": 101
+  },
+  "result": {
+   "video": {
+    "url": "https://v3b.fal.media/files/b/0ab17999/bq8DdBv6REV5xhfd2KGu__minimax-h3.mp4",
+    "content_type": "video/mp4",
+    "file_name": "bq8DdBv6REV5xhfd2KGu__minimax-h3.mp4",
+    "file_size": 21385085
+   },
+   "expanded_prompt": null,
+   "timings": {
+    "inference": 8.80882461600413
+   }
+  },
+  "files": [
+   "raw/concept-video.mp4"
+  ]
+ }
+]

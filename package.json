@@ -1,0 +1,28 @@
+{
+  "name": "lantern-river",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT-0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 4173",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc",
+    "check": "npm run typecheck && npm test && vite build",
+    "balance": "node tools/balance.ts"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.1",
+    "@types/three": "0.186.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#132e4b">
+<title>Lantern River</title>
+<meta name="description" content="Steer a lantern boat down a festival-night river and carry its flame to the sea. A new river every day, the same for everyone.">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/src/game/style.css">
+</head>
+<body>
+<canvas id="view" aria-label="Lantern River"></canvas>
+<div id="surface"></div>
+
+<header id="hud" hidden>
+  <div class="meters">
+    <div class="flame" aria-label="Flame"><i id="light"></i></div>
+    <div class="trip" aria-label="Distance to the sea"><i id="trip"></i></div>
+  </div>
+  <div class="glow" aria-label="Light gathered"><span id="glow">0</span></div>
+  <div class="buttons">
+    <button id="pause" type="button" aria-label="Pause">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+    </button>
+    <button id="restart" type="button" aria-label="Restart">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a7 7 0 1 1-6.6 4.7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M4 4v6h6z"/></svg>
+    </button>
+  </div>
+</header>
+
+<section id="title" class="card">
+  <h1>Lantern River</h1>
+  <p class="day" id="day"></p>
+  <ul>
+    <li><b>Drag</b> left and right to steer. Keys and gamepads work too.</li>
+    <li>Pass close to <b>shrines</b> and through <b>lantern gates</b> to feed your flame.</li>
+    <li>Rocks, banks and wind dim it. Carry it to the sea.</li>
+  </ul>
+  <p class="go">Tap to start</p>
+</section>
+
+<section id="paused" class="card" hidden>
+  <h2>Paused</h2>
+  <div class="row">
+    <button id="resume" type="button" class="primary">Resume</button>
+    <button id="restart2" type="button">Restart</button>
+  </div>
+</section>
+
+<section id="over" class="card" hidden>
+  <h2 id="verdict"></h2>
+  <p class="score"><span id="final-glow"></span> light</p>
+  <p class="detail" id="final-detail"></p>
+  <p class="best" id="best"></p>
+  <div class="row">
+    <a id="share" class="primary" target="_blank" rel="noopener">Share on X</a>
+    <button id="again" type="button">Play again</button>
+  </div>
+</section>
+
+<pre id="debug" hidden></pre>
+<script type="module" src="/src/game/main.ts"></script>
+</body>
+</html>
