@@ -2,6 +2,7 @@
 
 A daily river game in Three.js, built for x-gaming#6 (github.com/imDev2023/x-gaming): an original game with Sumiro-level art, a daily run and a score a server can replay.
 The operator chose this concept, this repo and a fal budget of up to 30 USD on 2026-11-07.
+Where the work stands and what is next lives in issue #6's Status section and its "Open questions for the operator".
 Read [SPEC.md](SPEC.md) for the design and [docs/architecture.md](docs/architecture.md) for the layers and the Solana path before changing anything.
 
 ## Rules
@@ -21,6 +22,12 @@ Read [SPEC.md](SPEC.md) for the design and [docs/architecture.md](docs/architect
 - The repo is public: no keys, no raw paid outputs (they live in the gitignored `raw/`, the only copy, never delete it), and no copied text or screenshots of other people's work.
 - Generation calls (fal and the like) are paid and need the owner's approval each time.
   Run them through `node tools/fal.ts`, then read the exact charge from fal's usage API with `FAL_BILLING_KEY` (x-gaming's WORKFLOW.md, Costs) and log that in the spend ledger and CREDITS.md.
+- The owner rejected the code-built look on 2026-11-07 ("I hate the graphics"), even after the night-lighting pass in db4ddaf.
+  Lighting, bloom and mirrored water do not close the gap: Sumiro's look comes from 26 generated, textured models (105 MB of its build), so no shape built from primitives in `scene.ts` should be shipped as final art.
+- The owner lifted the size cap on 2026-11-07: up to 200 MB is fine, replacing issue #6's "under 10 MB".
+  Keep the start fast by streaming: load the first stretch of river, then the rest during play (Sumiro takes 35 to 67 s to reach its title).
+- fal's price list is free to read: `GET https://api.fal.ai/v1/models/pricing?endpoint_id=<id>` with `FAL_KEY` (the billing key lacks that permission).
+  On 2026-11-07: Tripo v2.5 image-to-3D and multiview-to-3D 0.01 USD per credit, Hunyuan3D v2.1 0.30 per model, GPT Image 1.5 edit priced per unit.
 - Follow x-gaming's WORKFLOW.md for the asset pipeline: concept art, image-to-3D, the Blender asset loop and its done checks, then the ship check.
 - Playtest with `tools/autoplay.js` (it drags like a finger) through `agent-browser`, and check a run with `node tools/replay.ts`.
 
