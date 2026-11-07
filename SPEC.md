@@ -6,7 +6,7 @@ The sections marked "from the video" are written from the concept video's frames
 
 ## The pitch
 
-On festival night a paper-lantern boat drifts down a river through a canal town, past shrines, bridges and fireworks.
+On festival night a small wooden lantern boat drifts down a river through a canal town, past shrines, bridges and fireworks.
 Drag left and right to steer around rocks and through lantern gates.
 A shrine you pass close to lends your flame light; wind, spray and rocks dim it.
 The run ends when the flame goes out or the boat reaches the sea.
@@ -34,7 +34,7 @@ It is kept re-encoded at 540 px in [video/concept.mp4](video/concept.mp4); the f
 
 The video made the boat a small wooden rowboat with a single candle flame on a post at its bow, not the folded paper boat the prompt asked for (`f_005`).
 It reads well at phone size: a warm orange hull, a bright flame and a soft pool of light on the water around it.
-Whether the hero stays wooden or goes back to paper is decided at the concept-art step.
+The operator chose the wooden boat on 2026-11-07: it reads well at phone size, and a simple hull is built well in Blender, where folded paper would need a generator and cleanup.
 
 ### The key moments
 

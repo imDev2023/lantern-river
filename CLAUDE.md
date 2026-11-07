@@ -16,6 +16,8 @@ Read [SPEC.md](SPEC.md) for the design and [docs/architecture.md](docs/architect
 - The owner chose no sign-in for now: anyone can play, and the day's best stays in their browser.
 - Licence (owner, 2026-11-07, same as Dockstack): code MIT No Attribution, our assets CC0.
 - Use Vercel for hosting, as Dockstack does; the owner asked not to use Cloudflare for Dockstack.
+  The Vercel project `lantern-river` builds from source (`.vercelignore` keeps `raw/`, `video/` and `study/` out of the upload); `vercel deploy` makes a preview behind Vercel sign-in, and `vercel deploy --prod` updates https://lantern-river.vercel.app, which waits for the owner.
+  Trap (2026-11-07): Vercel's CLI sent the project's very first `vercel deploy`, without `--prod`, to production, so the grey-box went public at lantern-river.vercel.app.
 - The repo is public: no keys, no raw paid outputs (they live in the gitignored `raw/`, the only copy, never delete it), and no copied text or screenshots of other people's work.
 - Generation calls (fal and the like) are paid and need the owner's approval each time.
   Run them through `node tools/fal.ts`, then read the exact charge from fal's usage API with `FAL_BILLING_KEY` (x-gaming's WORKFLOW.md, Costs) and log that in the spend ledger and CREDITS.md.

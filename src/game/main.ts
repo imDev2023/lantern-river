@@ -28,6 +28,16 @@ const ui = {
   share: $<HTMLAnchorElement>('share'), debug: $('debug'),
 };
 
+// Under ?debug, show uncaught errors on the page itself: a phone has no console to read.
+if (debug) {
+  const show = (msg: string) => {
+    ui.debug.hidden = false;
+    ui.debug.textContent = `${ui.debug.textContent ?? ''}\nERROR ${msg}`.trim();
+  };
+  window.addEventListener('error', (e) => show(`${e.message} at ${e.filename?.split('/').pop()}:${e.lineno}:${e.colno}`));
+  window.addEventListener('unhandledrejection', (e) => show(String(e.reason)));
+}
+
 const dayText = `${String(today).slice(0, 4)}-${String(today).slice(4, 6)}-${String(today).slice(6)}`;
 ui.day.textContent = isDaily ? `${stage.name} · daily river for ${dayText}` : `${stage.name} · river ${seed}`;
 
@@ -170,6 +180,8 @@ let last = performance.now();
 let frames = 0;
 let fpsAt = last;
 let fps = 0;
+/** Milliseconds from navigation to the first drawn frame: the load time a player sees. */
+let firstFrame = 0;
 const STEP = 1 / TICK_HZ;
 
 function frame(now: number): void {
@@ -188,6 +200,10 @@ function frame(now: number): void {
   }
   const before = debug ? hash(st) : '';
   view.draw(st, prev, mode === 'play' ? acc / STEP : 1, dt);
+  if (!firstFrame) {
+    firstFrame = Math.round(performance.now());
+    document.documentElement.dataset.firstFrame = String(firstFrame);
+  }
   if (debug && hash(st) !== before) console.error(`drawing changed the rules' state at tick ${st.tick}`);
   hud();
   if (debug) {
@@ -198,7 +214,7 @@ function frame(now: number): void {
       fpsAt = now;
       const { calls, triangles } = view.stats();
       ui.debug.hidden = false;
-      ui.debug.textContent = `${fps} fps · ${calls} calls · ${triangles} tris\n${stage.id} seed ${seed} · tick ${st.tick} · ${hash(st)}`;
+      if (!ui.debug.textContent?.includes('ERROR')) ui.debug.textContent = `${fps} fps · ${calls} calls · ${triangles} tris · first frame ${firstFrame} ms\n${stage.id} seed ${seed} · tick ${st.tick} · ${hash(st)}`;
     }
   }
   requestAnimationFrame(frame);

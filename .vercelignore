@@ -1,0 +1,7 @@
+raw/
+media/
+video/
+study/
+dist/
+node_modules/
+.env*
