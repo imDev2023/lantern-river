@@ -2,7 +2,8 @@
 
 A daily river game in Three.js, built for x-gaming#6 (github.com/imDev2023/x-gaming): an original game with Sumiro-level art, a daily run and a score a server can replay.
 The operator chose this concept, this repo and a fal budget of up to 30 USD on 2026-11-07.
-Where the work stands and what is next lives in issue #6's Status section and its "Open questions for the operator".
+On 2026-11-08 the operator replaced it with Lamplighter (x-gaming#7, `../lamplighter`, github.com/imDev2023/lamplighter) and closed #6: this repo is parked, and Lamplighter will reuse its rules, chunk generator, replay check and test pilot.
+Do not build on it further unless the owner brings the boat run back as a second mode.
 Read [SPEC.md](SPEC.md) for the design and [docs/architecture.md](docs/architecture.md) for the layers and the Solana path before changing anything.
 
 ## Rules

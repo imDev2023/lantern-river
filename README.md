@@ -7,6 +7,8 @@ The rules, controls, cards, daily run and night lighting are done: glowing lante
 The models are still simple shapes; the art pass (concept art, then the boat and canal kit in Blender) comes next.
 It is built for [x-gaming#6](https://github.com/imDev2023/x-gaming/issues/6).
 
+Parked on 2026-11-08: [Lamplighter](https://github.com/imDev2023/lamplighter), a rooftop runner in the same canal town, replaces it and will reuse its rules and replay check.
+
 ## How to play
 
 1. Drag left and right anywhere on the screen to steer; arrow keys, A and D, and a gamepad's stick or d-pad work too.
